@@ -2,8 +2,8 @@ const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
 const textArray = ["My name is SeongJun", "I'm Backend Engineer", "I use Java, C#, NodeJS", "But I love Frontend too"];
-const typingSpeed = 100;
-const erasingSpeed = 50;
+const typingSpeed = 70;
+const erasingSpeed = 30;
 const newTextDelay = 1500; // Delay between current and next text
 let textArrayIndex = 0; // textArray index
 let charIndex = 0; // character index
