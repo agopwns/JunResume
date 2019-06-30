@@ -5,51 +5,8 @@
     <title>JunResume</title>
     <link rel = "stylesheet" href="mystyle.css">
 </head>
-<!--<script src="typingScript.js"></script>-->
-<script>
-const typedTextSpan = document.querySelector(".typed-text");
-const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["My name is SeongJun", "I'm Backend Engineer", "I use Java, C#, NodeJS", "But I love Frontend too"];
-const typingSpeed = 100;
-const erasingSpeed = 50;
-const newTextDelay = 1500; // Delay between current and next text
-let textArrayIndex = 0; // textArray index
-let charIndex = 0; // character index
 
-function type() {
-  if (charIndex < textArray[textArrayIndex].length) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, typingSpeed);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-  	setTimeout(erase, newTextDelay);
-  }
-}
-
-function erase() {
-	if (charIndex > 0) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-    charIndex--;
-    setTimeout(erase, erasingSpeed);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-    textArrayIndex++;
-    if(textArrayIndex>=textArray.length) textArrayIndex=0;
-    setTimeout(type, typingSpeed + 1100);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-  setTimeout(type, newTextDelay + 250);
-});
-
-</script>
 <body>
     <nav>
         <ul>
@@ -57,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
                 Home - 이름, 간단한 기술 스택, 자기소개
                 Project - 실무 프로젝트
                 About me - 나에 대하여
-                Contatct - 이래도 나를 원한다면 연락줘
+                Contatct - 나를 원한다면 연락줘
             -->
             <li><a href="#section1"Home</a>Home</a></li>
             <li><a href="#section2"Home</a>Project</a></li>
@@ -67,12 +24,10 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
     </nav>
 
     <div id = "section1">
-    <h1>This is Home Section</h1>
         <div class="container">
-            <p><span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
-        </div>
+            <p> <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+          </div>
         <div>
-
 
         </div>
     </div>
@@ -86,4 +41,6 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
     <h1>This is Contatct Section</h1>
     </div>
 </body>
+<script src="typingScript.js"></script>
+
 </html>
